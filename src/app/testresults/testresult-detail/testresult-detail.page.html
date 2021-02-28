@@ -1,9 +1,46 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>testresult-detail</ion-title>
+  <ion-toolbar color="primary">
+    <ion-title>Blood Test Results</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <!-- <h1>{{ loadedTestresult.title loadedTestresult.date }}</h1> -->
+          <h1>{{ loadedTestresult.date }}</h1>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-list>
+
+    <ion-item>
+      <ion-icon color="secondary" name="information-circle" item-left></ion-icon>
+      {{loadedTestresult.title}}
+    </ion-item>
+
+    <ion-item>
+      <ion-icon color="danger" name="heart-outline" item-left></ion-icon>
+      HDL: {{loadedTestresult.hdl}} mmol/L
+    </ion-item>
+
+    <ion-item>
+      <ion-icon color="danger" name="heart-outline" item-left></ion-icon>
+      LDL: {{loadedTestresult.ldl}} mmol/L
+    </ion-item>
+
+    <ion-item>
+      <ion-icon color="danger" name="heart-outline" item-left></ion-icon>
+      Triglycerides: {{loadedTestresult.trig}} mmol/L
+    </ion-item>
+
+    <ion-item>
+      <ion-icon color="danger" name="heart-outline" item-left></ion-icon>
+      Total Cholesterol: {{loadedTestresult.total}} mmol/L
+    </ion-item>
+
+
+  </ion-list>
 
 </ion-content>

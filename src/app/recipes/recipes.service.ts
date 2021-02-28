@@ -21,7 +21,7 @@ export class RecipesService {
       title: "Potato Gratin",
       imageUrl:
       "https://www.exceedinglyvegan.com/vegan/thumbnails/thumbnailimage/5116/0284/4165/vegan-steak-bake-recipe-greggs.jpg",
-      ingredients: ['Potato', 'Onion, Sunflower Seeds']
+      ingredients: ['Potato', 'Onion', 'Sunflower Seeds', 'Olive Oil', 'Salt']
     }
   ]
 

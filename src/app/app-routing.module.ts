@@ -34,7 +34,16 @@ const routes: Routes = [
   },
   {
     path: 'testresults',
-    loadChildren: () => import('./testresults/testresults.module').then( m => m.TestresultsPageModule)
+    children: [
+      {
+        path: '',
+        loadChildren: () => import('./testresults/testresults.module').then( m => m.TestresultsPageModule)
+      },
+      {
+        path: ':testresultId',
+        loadChildren: () => import('./testresults/testresult-detail/testresult-detail.module').then( m => m.TestresultDetailPageModule)
+      }
+    ]
   },
 ];
 
