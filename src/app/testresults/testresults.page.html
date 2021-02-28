@@ -6,7 +6,7 @@
 
 <ion-content>
   <ion-list>
-    <ion-item *ngFor="let testresult of testresults">
+    <ion-item *ngFor="let testresult of testresults" [routerLink]="['./', testresult.id]">
       <ion-label> {{ testresult.title }} </ion-label>
       <ion-label> {{ testresult.date }} </ion-label>
     </ion-item>
