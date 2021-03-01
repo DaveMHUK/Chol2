@@ -43,4 +43,10 @@ export class TestresultsService {
       })
     };
   }
+
+  deleteTestresult(testresultId: string) {
+    this.testresults = this.testresults.filter(testresult => {
+      return testresult.id !== testresultId;
+    });
+  }
 }
