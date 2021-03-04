@@ -13,8 +13,31 @@ export class TestresultsPage implements OnInit {
 
   constructor(private testresultsService: TestresultsService)  { }
 
+
+
   ngOnInit() {
+    // this.testresults = this.testresultsService.getAllTestresults();
+    console.log('ngInit');
+  }
+
+  ionViewWillEnter() {
+    console.log('ionViewWillEnter');
     this.testresults = this.testresultsService.getAllTestresults();
   }
+
+  ionViewDidEnter() {
+    console.log('ionViewDidEnter');
+  }
+
+
+  ionViewWillLeave() {
+    console.log('ionViewWillLeave');
+  }
+
+  ionViewDidLeave() {
+    console.log('ionViewDidLeave');
+  }
+
+
 
 }
