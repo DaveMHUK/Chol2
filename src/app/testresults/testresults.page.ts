@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 
 import { Testresult } from './testresult.model';
 import { TestresultsService } from './testresults.service';
@@ -8,12 +8,10 @@ import { TestresultsService } from './testresults.service';
   templateUrl: './testresults.page.html',
   styleUrls: ['./testresults.page.scss'],
 })
-export class TestresultsPage implements OnInit {
+export class TestresultsPage implements OnInit, OnDestroy {
   testresults: Testresult[];
 
   constructor(private testresultsService: TestresultsService)  { }
-
-
 
   ngOnInit() {
     // this.testresults = this.testresultsService.getAllTestresults();
@@ -29,7 +27,6 @@ export class TestresultsPage implements OnInit {
     console.log('ionViewDidEnter');
   }
 
-
   ionViewWillLeave() {
     console.log('ionViewWillLeave');
   }
@@ -38,6 +35,8 @@ export class TestresultsPage implements OnInit {
     console.log('ionViewDidLeave');
   }
 
-
+  ngOnDestroy() {
+    console.log('ngDestroy');
+  }
 
 }
