@@ -14,9 +14,31 @@ const routes: Routes = [
         loadChildren: () => import('../landing/landing.module').then(m => m.LandingPageModule)
       },
       {
+        path: 'mydetails',
+        loadChildren: () => import('../home/home.module').then(m => m.HomePageModule)
+      },
+      {
         path: 'testresults',
-        loadChildren: () => import('../testresults/testresults.module').then(m => m.TestresultsPageModule)
-      }
+        children: [
+          {
+            path: '',
+            loadChildren: () => import('../testresults/testresults.module').then(m => m.TestresultsPageModule)
+          },
+          {
+            path: ':testresultId',
+            loadChildren: () => import('../testresults/testresult-detail/testresult-detail.module').then(m => m.TestresultDetailPageModule)
+          }
+        ]
+      },
+      {
+        path: 'chart',
+        loadChildren: () => import('../chart/chart.module').then(m => m.ChartPageModule)
+      },
+      {
+        path: 'ratio',
+        loadChildren: () => import('../ratio/ratio.module').then(m => m.RatioPageModule)
+      },
+
     ]
   },
   {
